@@ -63,12 +63,12 @@ typings/
 # MacOSX
 .DS_Store
 
-/client/node_modules
-/client/.pnp
-/client/.pnp.js
+client/node_modules
+client/.pnp
+client/.pnp.js
 
 # testing
-/client/coverage
+client/coverage
 
 # production
 /client/build
