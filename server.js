@@ -6,6 +6,10 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 
 const app = express();
+const path = require("path")
+
+app.use(express.static(path.join(__dirname, "client", "build")))
+
 
 // Bodyparser middleware
 app.use(
@@ -37,5 +41,9 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
