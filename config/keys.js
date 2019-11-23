@@ -1,4 +1,4 @@
 module.exports = {
-    mongoURI: "mongodb+srv://howonkim:1q2w3e!!@cluster0-ef09l.azure.mongodb.net/test?retryWrites=true&w=majority",
+    mongoURI: "mongodb://heroku_z2kkq7jm:a37rdvll7oibm8ojmoq0mk7qt3@ds013946.mlab.com:13946/heroku_z2kkq7jm",
     secretOrKey: "LSCHowonProject"
   };
