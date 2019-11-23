@@ -7,6 +7,9 @@ const users = require("./routes/api/users");
 
 const app = express();
 
+// For hosting
+const path = require("path")
+
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({
@@ -37,5 +40,12 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 
 const port = process.env.PORT || 5000;
+
+// For hosting
+app.use(express.static(path.join(__dirname, "client", "build")))
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+});
+
 
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
