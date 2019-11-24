@@ -12,6 +12,8 @@ class Register extends Component {
       email: "",
       password: "",
       password2: "",
+      studentID: "",
+      class: "",
       errors: {}
     };
   }
@@ -115,6 +117,34 @@ return (
                 />
                 <label htmlFor="password2">Confirm Password</label>
                 <span className="red-text">{errors.password2}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.studentID}
+                  error={errors.studentID}
+                  id="studentID"
+                  type="number" min="0"
+                  className={classnames("", {
+                    invalid: errors.studentID
+                  })}
+                />
+                <label htmlFor="studentID">Student ID</label>
+                <span className="red-text">{errors.studentID}</span>
+              </div>
+              <div className="input-field col s12">
+                <input
+                  onChange={this.onChange}
+                  value={this.state.class}
+                  error={errors.class}
+                  id="class"
+                  type="text"
+                  className={classnames("", {
+                    invalid: errors.class
+                  })}
+                />
+                <label htmlFor="studentID">Class</label>
+                <span className="red-text">{errors.class}</span>
               </div>
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button

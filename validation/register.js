@@ -30,6 +30,14 @@ if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
 if (!Validator.equals(data.password, data.password2)) {
     errors.password2 = "Passwords must match";
   }
+// Student ID checks
+if (Validator.isEmpty(data.studentID)) {
+  errors.studentID = "Student ID field is required";
+}
+// Class checks
+if (Validator.isEmpty(data.class)) {
+  errors.class = "Class field is required";
+}
 return {
     errors,
     isValid: isEmpty(errors)
