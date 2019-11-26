@@ -39,7 +39,9 @@ const newUser = {
       name: this.state.name,
       email: this.state.email,
       password: this.state.password,
-      password2: this.state.password2
+      password2: this.state.password2,
+      studentID: this.state.studentID,
+      class: this.state.class
     };
 this.props.registerUser(newUser, this.props.history); 
   };
